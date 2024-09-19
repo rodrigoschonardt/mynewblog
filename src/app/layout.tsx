@@ -10,16 +10,25 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: env.NEXT_PUBLIC_BLOG_FAVICON }],
 };
 
+function TopNaV(){
+  return (
+    <nav className="flex justify-between p-3 w-full border-b-2 border-b-gray-300 items-center">
+      <a href="/" className="w-52">
+        <img src={env.NEXT_PUBLIC_BLOG_IMAGE} alt="Blog image" />
+      </a>
+      <div className="font-bold">Login</div>
+  </nav>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html className={`${GeistSans.variable} text-gray-700`}>
       <body>
         <header>
-          <nav className="justify-between p-2 w-full border-b-2 border-b-gray-300">
-            <img className="w-52" src={env.NEXT_PUBLIC_BLOG_IMAGE} alt="Blog image" />
-          </nav>
+          <TopNaV/>
         </header>
         {children}
       </body>
