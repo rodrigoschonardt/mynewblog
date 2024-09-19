@@ -19,6 +19,9 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
+    NEXT_PUBLIC_BLOG_NAME: z.string(),
+    NEXT_PUBLIC_BLOG_FAVICON: z.string(),
+    NEXT_PUBLIC_BLOG_IMAGE: z.string()
     // NEXT_PUBLIC_CLIENTVAR: z.string(),
   },
 
@@ -29,6 +32,9 @@ export const env = createEnv({
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_BLOG_NAME: process.env.NEXT_PUBLIC_BLOG_NAME,
+    NEXT_PUBLIC_BLOG_FAVICON: process.env.NEXT_PUBLIC_BLOG_FAVICON,
+    NEXT_PUBLIC_BLOG_IMAGE: process.env.NEXT_PUBLIC_BLOG_IMAGE
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
