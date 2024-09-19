@@ -7,9 +7,9 @@ export default async function HomePage() {
 
   return (
     <main className="">
-      <div className="flex flex-col p-5 items-center">
-        <h2 className="text-2xl font-bold">Últimas postagens</h2>
-        <div className="flex gap-5">
+      <div className="flex flex-col p-3 items-center">
+          <h3 className="text-2xl font-bold p-3">Últimas postagens</h3>
+        <div className="flex gap-5 flex-wrap justify-center">
           {
             posts.map((post) => (
               <PostCard name={post.name} date={post.createdAt} key={post.id}/>
