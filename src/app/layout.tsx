@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { env } from "~/env";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: env.NEXT_PUBLIC_BLOG_NAME,
@@ -13,9 +14,9 @@ export const metadata: Metadata = {
 function TopNaV(){
   return (
     <nav className="flex justify-between p-3 w-full border-b-2 border-b-gray-300 items-center">
-      <a href="/" className="w-52">
+      <Link href="/" className="w-52">
         <img src={env.NEXT_PUBLIC_BLOG_IMAGE} alt="Blog image" />
-      </a>
+      </Link>
       <div className="font-bold">Login</div>
   </nav>
   );
@@ -26,7 +27,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html className={`${GeistSans.variable} text-gray-700`}>
-      <body>
+      <body className="overflow-hidden">
         <header>
           <TopNaV/>
         </header>
