@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 function TopNaV(){
   return (
-    <nav className="flex justify-between p-3 w-full border-b-2 border-b-gray-300 items-center">
+    <nav className="h-[10vh] flex justify-between p-3 w-full border-b-2 border-b-gray-300 items-center">
       <Link href="/" className="w-52">
         <img src={env.NEXT_PUBLIC_BLOG_IMAGE} alt="Blog image" />
       </Link>
@@ -31,7 +31,9 @@ export default function RootLayout({
         <header>
           <TopNaV/>
         </header>
-        {children}
+        <main className="h-[90vh] overflow-auto">
+          {children}
+        </main>
       </body>
     </html>
   );
