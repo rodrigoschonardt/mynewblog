@@ -5,6 +5,7 @@ import { type Metadata } from "next";
 import { env } from "~/env";
 import Link from "next/link";
 import { ClerkProvider, SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { ptBR } from '@clerk/localizations'
 
 export const metadata: Metadata = {
   title: env.NEXT_PUBLIC_BLOG_NAME,
@@ -18,8 +19,10 @@ function TopNaV(){
       <Link href="/" className="w-52">
         <img src={env.NEXT_PUBLIC_BLOG_IMAGE} alt="Blog image" />
       </Link>
-      <SignedOut>
-          <SignInButton/>
+      <SignedOut >
+        <SignInButton>
+          Logar
+        </SignInButton>
       </SignedOut>
       <SignedIn>
           <UserButton/>
@@ -32,7 +35,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider localization={ptBR}>
       <html className={`${GeistSans.variable} text-gray-700`}>
         <body className="overflow-hidden">
           <header>
